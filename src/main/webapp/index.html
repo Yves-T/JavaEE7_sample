@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Users</title>
+    <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+</head>
+<body>
+<h1>Users</h1>
+<table id="users"></table>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.getJSON("/SampleApp/api/users/all", function (data) {
+            $.each(data, function (index, user) {
+                $("#users").append("<tr><td>" + user.email + "</td></tr>")
+            })
+        })
+    })
+</script>
+
+</body>
+</html>
